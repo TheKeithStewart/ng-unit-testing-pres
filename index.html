@@ -30,32 +30,125 @@
 			<section>
 				<h1>Unit Testing in Angular</h1>
 				<h3>By Keith Stewart</h3>
-				<a href="https://twitter.com/KeithGStewart" target="_blank">@KeithGStewart</a>
+				<a href="https://twitter.com/TheKeithStewart" target="_blank">@TheKeithStewart</a>
 			</section>
 
-			<!-- Maybe the Tour of Heros -->
-			<section>App we are Testing</section>
+			<section>
+				<h1>Agenda</h1>
 
-			<section>Why unit test</section>
-			<section>Test Runners</section>
-			
-			<section>Running tests with Karma and the Angular CLI</section>
-			<section>Testing Artifacts (i.e. code coverage)</section>
-			
-			<section>Wallaby.js</section>
+				<ol>
+					<!-- <li>Why do we write unit tests?</li>
+					<li>Unit vs. End-to-end (e2e) Tests</li>
+					<li>Tools for unit testing</li>
+					<li>Running unit tests with the Angular CLI and Karma</li>
+					<li>Wallaby.js</li>
+					<li>Basic structure of spec file</li>
 
+					<li>The app we are going to test</li> -->
+
+					<li>Writing some unit tests</li>
+					<li>Testing a basic function with no dependencies</li>
+					<li>
+						<h1>Testing a component with an animation</h1>
+
+						NoopAnimationsModule
+					</li>
+					<li>Testing a component with service dependencies</li>
+					<li>Mocks and Spies</li>
+					<li>overrideComponent() - CharacterSearchComponent</li>
+					<li>Testing Routing</li>
+					<li>Testing HTTP Client</li>
+					<li>Testing Promises</li>
+					<li>Testing Observables</li>
+					<li>Marble Tests</li>
+
+					<li>TDD vs. BDD</li>
+					<li>Feature we are going to develop using TDD</li>
+
+					<li>Q & A</li>
+				</ol>
+			</section>
+
+			<!-- The beginning -->
+
+			<section>Why should we write unit tests?</section>
+
+			<section>
+				<h1>Unit vs. End-to-end (e2e) Tests</h1>
+			</section>
+			
 			<section>TDD vs. BDD</section>
+			
+			<section>
+				<h1>Tools</h1>
+
+				Anyone not using the CLI with Angular?  We will skip Karma configuration.
+			</section>
+
+			<section>
+				<h1>Running unit tests with the Angular CLI and Karma</h1>
+			</section>
+
+			<section>
+				<h1>Wallaby.js</h1>
+			</section>
+		
+			<section>Testing Artifacts (i.e. code coverage)</section>
+
+			<section>
+				<h1>Basic structure of spec file</h1>
+			</section>
+			
+			<section>
+				<h1>App we are Testing</h1>
+				<h3>Tour of Heroes</h3>
+				<h3>vs. Villians!!!</h3>
+
+				<section>
+					<h1>Modifications to Tour of Heroes</h1>
+	
+					<ul>
+						<li>Add concepts of characters and villains</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<h1>Some basic situations in tests</h1>
+
+				<h3>CUSTOM_ELEMENTS_SCHEMA - CharactersComponent</h3>
+				<h3>NoopAnimationsModule - need to add an animation</h3>
+				<h3>Routing</h3>
+				<h3>Pipe - need to create a pipe</h3>
+			</section>
 
 			<section>
 				<h1>Mocks</h1>
 				Creating mock files for services are you are writing the service
 
 				<h1>Spys</h1>
+				and.returnValue (Promise) - CharactersComponent
+				and.returnValue (Observable) - 
+			</section>
+
+			<section>
+				<section>
+					<h1>The importance of writing small functions</h1>
+				</section>
+
+				<section>Complex functions are hard to test</section>
+				
+				<section>Refactor to small functions that are easier to test</section>
 			</section>
 
 			<!-- Maybe an example could be something like Josh's getter function -->
 			<section>Observables - Marble Tests</section> 
-			<section>HTTP Client</section>
+
+			<section>
+				<h1>HTTP</h1>
+
+				<h3>Will show variations on tests for HTTP Client</h3>
+			</section>
 		</div>
 	</div>
 
