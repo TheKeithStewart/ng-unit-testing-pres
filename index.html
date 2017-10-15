@@ -8,19 +8,19 @@
 	<title>Unit Testing in Angular</title>
 
 	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="css/theme/league.css">
 
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 </head>
 
 <body>
@@ -37,15 +37,6 @@
 				<h1>Agenda</h1>
 
 				<ol>
-					<!-- <li>Why do we write unit tests?</li>
-					<li>Unit vs. End-to-end (e2e) Tests</li>
-					<li>Tools for unit testing</li>
-					<li>Running unit tests with the Angular CLI and Karma</li>
-					<li>Wallaby.js</li>
-					<li>Basic structure of spec file</li>
-
-					<li>The app we are going to test</li> -->
-
 					<li>Writing some unit tests</li>
 					<li>Testing a basic function with no dependencies</li>
 					<li>
@@ -69,25 +60,138 @@
 				</ol>
 			</section>
 
+			<section>
+				<h2>Agenda</h2>
+
+				<ul>
+					<li>Why should we test?</li>
+					<li>Different types of tests</li>
+					<li>Tools and Technologies</li>
+					<li>The application we will be testing</li>
+					<li>What do unit tests look like?</li>
+					<li>Write unit tests for existing functionality</li>
+					<li>Add a new feature using TDD</li>
+				</ul>
+			</section>
+
 			<!-- The beginning -->
 
-			<section>Why should we write unit tests?</section>
-
 			<section>
-				<h1>Unit vs. End-to-end (e2e) Tests</h1>
-			</section>
-			
-			<section>TDD vs. BDD</section>
-			
-			<section>
-				<h1>Tools and Technologies</h1>
-
-				Anyone not using the CLI with Angular?  We will skip Karma configuration.
+				<h2>Why should we test?</h2>
 
 				<section>
-					<h1>Test Framework</h1>
+					<blockquote>
+						&ldquo;Automated testing is the enabler... It is the thing that allows us to iterate on our code. Bring more features, 
+						make risky refactorings, make aggresive performance optimizations, all while knowing that all the features we've built already still work.&rdquo;
+					</blockquote>
 
-					<h3>Jasmine</h3>
+					<p style="font-size: 24px">Igor Minar - "Software Engineering as an Engineering Discipline" at AngularMix</p>
+				</section>
+
+				<section>
+					<p>The primary benefits of testing your applications are:</p>
+
+					<ul>
+						<li class="fragment">Improved code quality</li>
+						<li class="fragment">Reduced overall cost of development</li>
+						<li class="fragment">Better documentation of code</li>
+						<li class="fragment">Increased confidence in refactorings</li>
+					</ul>
+				</section>
+			</section>
+
+			<section>
+				<h2>Different Types of Tests</h2>
+
+				<section>
+					<p>The main types of tests used in Angular applications are:</p>
+
+					<ul>
+						<li>Unit tests</li>
+						<li>Functional tests</li>
+						<li>End-to-end (e2e) tests</li>
+					</ul>
+				</section>
+
+				<section>
+					<p>Unit Testing:</p>
+
+					<blockquote>
+							Unit testing is a software testing method by which individual units of source code... are tested to determine whether they are fit for use.
+					</blockquote>
+
+					<p style="font-size: 24px">Source: <a href="https://en.wikipedia.org/wiki/Unit_testing">https://en.wikipedia.org/wiki/Unit_testing</a></p>
+				</section>
+
+				<section>
+					<p>Functional Testing:</p>
+
+					<blockquote>
+							Functional testing is a way of checking software to ensure that it has all the required functionality that's specified within its functional requirements.
+					</blockquote>
+
+					<p style="font-size: 24px">Source: <a href="https://www.techopedia.com/definition/19509/functional-testing">https://www.techopedia.com/definition/19509/functional-testing</a></p>
+				</section>
+
+				<section>
+					<p>End-to-end Testing</p>
+
+					<blockquote>
+							End-to-end testing is a methodology used to test whether the flow of an application is performing as designed from start to finish. The purpose of carrying out end-to-end tests is to identify system dependencies and to ensure that the right information is passed between various system components and systems.
+					</blockquote>
+
+					<p style="font-size: 24px">Source: <a href="https://www.techopedia.com/definition/7035/end-to-end-test">https://www.techopedia.com/definition/7035/end-to-end-test</a></p>
+				</section>
+			</section>
+
+			<section>
+				<h2>Tools and Technologies</h2>
+
+				<section>
+					<table>
+						<thead>
+							<th>Type</th>
+							<th>Technologies</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Test Framework</td>
+								<td>Jasmine</td>
+							</tr>
+							<tr>
+								<td>Test Runner</td>
+								<td>
+									<div><a href="https://karma-runner.github.io/1.0/index.html">Karma</a></div>
+									<div><a href="https://wallabyjs.com/">Wallaby.js</a></div>
+								</td>
+							</tr>
+							<tr>
+								<td>End-to-end Test Framework</td>
+								<td>
+									<div><a href="http://www.protractortest.org/#/">Protractor</a></div>
+									<div><a href="https://www.cypress.io/">Cypress.io</a></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<h2>Jasmine</h2>
+
+					<h3>describe()</h3>
+					<h3>it()</h3>
+					<h3>expect()</h3>
+
+					<h3>Jasmine Like Matchers</h3>
+
+					<ul>
+						<li>toEqual()</li>
+						<li>toBe()</li>
+						<li>toMatch()</li>
+						<li>toHaveBeenCalled()</li>
+						<li>toHaveBeenCalledWith()</li>
+					</ul>
 				</section>
 
 				<section>
@@ -99,27 +203,46 @@
 				<section>
 					<h1>Other Tools</h1>
 
-					<h3><a href="https://www.npmjs.com/package/sinon">Sinon.js</a></h3>
-					<h3><a href="https://www.npmjs.com/package/testdouble">testdouble</a></h3>
+					<h3>
+						<a href="https://www.npmjs.com/package/sinon">Sinon.js</a>
+					</h3>
+					<h3>
+						<a href="https://www.npmjs.com/package/testdouble">testdouble</a>
+					</h3>
 				</section>
 			</section>
 
 			<section>
-				<h1>Running unit tests with the Angular CLI and Karma</h1>
+				<h2>Running unit tests with the Angular CLI and Karma</h2>
+				
+				<div>
+					<ul style="list-style-type: none;">
+						<li>// generating a new project</li>
+						<li>$ <span style="color: red">ng new my-new-project</span></li>
+					</ul>
+				</div>
 
-				<h3></h3>
+				<br />
+
+				<div>
+					<ul style="list-style-type: none;">
+						<li>// start unit tests via Karma</li>
+						<li>$ ng <span style="color: red">test</span></li>
+					</ul>
+				</div>
+	
 			</section>
 
 			<section>
 				<h1>Wallaby.js</h1>
 			</section>
-		
+
 			<section>Testing Artifacts (i.e. code coverage)</section>
 
 			<section>
 				<h1>Basic structure of spec file</h1>
 			</section>
-			
+
 			<section>
 				<h1>App we are Testing</h1>
 				<h3>Tour of Heroes</h3>
@@ -127,7 +250,7 @@
 
 				<section>
 					<h1>Modifications to Tour of Heroes</h1>
-	
+
 					<ul>
 						<li>Add concepts of characters and villains</li>
 					</ul>
@@ -141,6 +264,10 @@
 				<h3>NoopAnimationsModule - need to add an animation</h3>
 				<h3>Routing</h3>
 				<h3>Pipe - need to create a pipe</h3>
+				<h3>fakeAsync and tick - CharacterDetailComponent</h3>
+				<h3>Event Emitting - CharacterDetailComponent</h3>
+				<h3>Spying on functions on objects like window and localStorage - CharacterDetailComponent</h3>
+				<h3>Public vs. Private properties - CharacterSearchComponent.search() emits a value on a private subject</h3>
 			</section>
 
 			<section>
@@ -148,8 +275,16 @@
 				Creating mock files for services are you are writing the service
 
 				<h1>Spys</h1>
-				and.returnValue (Promise) - CharactersComponent
-				and.returnValue (Observable) - 
+				and.returnValue (Promise) - CharactersComponent and.returnValue (Observable) - CharacterSearchComponent and.throwError (Observable)
+				- CharacterSearchComponent
+			</section>
+
+			<section>
+				<h1>Excercise in determining what scenarios to test</h1>
+
+				<h3>CharacterSearchComponent.search()</h3>
+
+				Ask group what needs to be tested here
 			</section>
 
 			<section>
@@ -158,17 +293,16 @@
 				</section>
 
 				<section>Complex functions are hard to test</section>
-				
+
 				<section>Refactor to small functions that are easier to test</section>
 			</section>
-
-			<!-- Maybe an example could be something like Josh's getter function -->
-			<section>Observables - Marble Tests</section> 
 
 			<section>
 				<h1>HTTP</h1>
 
-				<h3>Will show variations on tests for HTTP Client</h3>
+				<h3>CharacterSearchService</h3>
+				<h3>Show tests for Http</h3>
+				<h3>Then show same tests if this were HttpClient</h3>
 			</section>
 		</div>
 	</div>
@@ -177,19 +311,22 @@
 	<script src="js/reveal.js"></script>
 
 	<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			transition: 'fade',
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
 </body>
 
 </html>
