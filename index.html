@@ -30,34 +30,9 @@
 			<section>
 				<h1>Unit Testing in Angular</h1>
 				<h3>By Keith Stewart</h3>
-				<a href="https://twitter.com/TheKeithStewart" target="_blank">@TheKeithStewart</a>
-			</section>
-
-			<section>
-				<h1>Agenda</h1>
-
-				<ol>
-					<li>Writing some unit tests</li>
-					<li>Testing a basic function with no dependencies</li>
-					<li>
-						<h1>Testing a component with an animation</h1>
-
-						NoopAnimationsModule
-					</li>
-					<li>Testing a component with service dependencies</li>
-					<li>Mocks and Spies</li>
-					<li>overrideComponent() - CharacterSearchComponent</li>
-					<li>Testing Routing</li>
-					<li>Testing HTTP Client</li>
-					<li>Testing Promises</li>
-					<li>Testing Observables</li>
-					<li>Marble Tests</li>
-
-					<li>TDD vs. BDD</li>
-					<li>Feature we are going to develop using TDD</li>
-
-					<li>Q & A</li>
-				</ol>
+        <a href="https://twitter.com/TheKeithStewart" target="_blank">@TheKeithStewart</a>
+        
+        <p><a href="https://goo.gl/ehFzWk">https://goo.gl/ehFzWk</a></p>
 			</section>
 
 			<section>
@@ -67,6 +42,7 @@
 					<li>Why should we test?</li>
 					<li>Different types of tests</li>
 					<li>Tools and Technologies</li>
+					<li>Mocks and Spys</li>
 					<li>The application we will be testing</li>
 					<li>What do unit tests look like?</li>
 					<li>Write unit tests for existing functionality</li>
@@ -81,7 +57,7 @@
 
 				<section>
 					<blockquote>
-						&ldquo;Automated testing is the enabler... It is the thing that allows us to iterate on our code. Bring more features, make
+						&ldquo;Automated testing is the enabler... It is the thing that allows us to iterate on our code, bring more features, make
 						risky refactorings, make aggresive performance optimizations, all while knowing that all the features we've built already
 						still work.&rdquo;
 					</blockquote>
@@ -105,7 +81,7 @@
 				<h2>Different Types of Tests</h2>
 
 				<section>
-					<p>The main types of tests used in Angular applications are:</p>
+					<p>Most common types of tests used in Angular applications are:</p>
 
 					<ul>
 						<li>Unit tests</li>
@@ -268,7 +244,7 @@
 	
 					Allows you to write tests against scenarios in a structure like this:
 	
-					<pre><code class="javascript" data-trim style="font-size: 18px;">
+					<pre style="width: 700px"><code class="javascript" data-trim style="font-size: 18px;">
 describe('#onSelect', () => {
   it('should set the selectedCharacter property', () => {
     const character = new Character();
@@ -318,11 +294,13 @@ describe('#onSelect', () => {
 				<h2>Test Runners</h2>
 
 				<section>
-					<p>Karma - a.k.a. Testacular</p>						
+					<img style="border: none; height: 75%; width: 75%;" src="/images/karma.png">
+
+					<p>Karma is the most commonly used test runner with Angular applications</p>
 				</section>
 
 				<section>
-					<h2>Running unit tests with the Angular CLI and Karma</h2>
+					<p>Running unit tests with the Angular CLI and Karma</p>
 	
 					<div>
 						<ul style="list-style-type: none;">
@@ -341,93 +319,287 @@ describe('#onSelect', () => {
 							</li>
 						</ul>
 					</div>
-	
+				</section>
+
+				<section>
+					<p style="margin-top: 60px;">Karma allows you to continuously run tests as you are saving changing to your code</p>
+
+					<img style="border: none;" src="/images/karma-report.png">
+				</section>
+
+				<section>
+					<img style="border: none;" src="/images/wallabyjs.png">
+
+					<p>Wallaby</p>
+				</section>
+
+				<section>
+					<p>Wallaby runs continuously as your are writing your code giving you quick feedback without having to save.</p>
+
+					<img style="border: none;" src="/images/vscode_inline.gif">
 				</section>
 			</section>
 
-
 			<section>
-				<h1>Wallaby.js</h1>
-			</section>
-
-			<section>Testing Artifacts (i.e. code coverage)</section>
-
-			<section>
-				<h1>Other Notable Tools</h1>
-
-				<h3>
-					<a href="https://www.npmjs.com/package/sinon">Sinon.js</a>
-				</h3>
-				<h3>
-					<a href="https://www.npmjs.com/package/testdouble">testdouble</a>
-				</h3>
-			</section>	
-	
-			<section>
-				<h1>Basic structure of spec file</h1>
-			</section>
-
-			<section>
-				<h1>App we are Testing</h1>
-				<h3>Tour of Heroes</h3>
-				<h3>vs. Villians!!!</h3>
+				<h2>Mocks and Spys</h2>
 
 				<section>
-					<h1>Modifications to Tour of Heroes</h1>
+					<div style="display: flex; justify-content: space-between">
+						<img class="fragment" style="border: none;" src="/images/mock.jpg">
+						<img class="fragment" style="border: none;" src="/images/homer-spy.jpeg">				
+					</div>
+				</section>
+
+				<section>
+          <h3>mocks:</h3>
+
+					<blockquote>
+            &ldquo;...mock objects are simulated objects that mimic the behavior of real objects in controlled ways&rdquo;
+          </blockquote>
+  
+            <p style="font-size: 24px"><a href="https://en.wikipedia.org/wiki/Mock_object">https://en.wikipedia.org/wiki/Mock_object</a></p>
+          </section>
+			</section>
+
+			<section>
+				<h2>App we are Testing</h2>
+
+				<section>
+					<div style="display: flex; justify-content:space-between;">
+						<div style="flex: auto" class="fragment fade-right">
+							<h2>Tour of Heroes</h2>
+							<img style="border: none;" src="/images/hero.jpg">
+						</div>
+	
+						<div>
+							<h2 style="flex: auto; padding: 200px 0; color: red" class="fragment fade-down">vs.</h2>
+						</div>
+	
+						<div style="flex: auto" class="fragment fade-left">
+							<h2>Villians!!!</h2>
+							<img style="border: none;" src="/images/villains.jpg">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<p>Same old Tour of Heroes but with a twist:</p>
 
 					<ul>
-						<li>Add concepts of characters and villains</li>
+            <li class="fragment">Add concept of <span style="color: red">villains</span></li>
+            <li class="fragment">Add unit tests to most of the existing functions</li>
 					</ul>
 				</section>
 			</section>
 
 			<section>
-				<h1>Some basic situations in tests</h1>
+        <h2>Example Tests</h2>
+      </section>
 
-				<h3>CUSTOM_ELEMENTS_SCHEMA - CharactersComponent</h3>
-				<h3>NoopAnimationsModule - need to add an animation</h3>
-				<h3>Routing</h3>
-				<h3>Pipe - need to create a pipe</h3>
-				<h3>fakeAsync and tick - CharacterDetailComponent</h3>
-				<h3>Event Emitting - CharacterDetailComponent</h3>
-				<h3>Spying on functions on objects like window and localStorage - CharacterDetailComponent</h3>
-				<h3>Public vs. Private properties - CharacterSearchComponent.search() emits a value on a private subject</h3>
-			</section>
-
-			<section>
-				<h1>Mocks</h1>
-				Creating mock files for services are you are writing the service
-
-				<h1>Spys</h1>
-				and.returnValue (Promise) - CharactersComponent and.returnValue (Observable) - CharacterSearchComponent and.throwError (Observable)
-				- CharacterSearchComponent
-			</section>
-
-			<section>
-				<h1>Excercise in determining what scenarios to test</h1>
-
-				<h3>CharacterSearchComponent.search()</h3>
-
-				Ask group what needs to be tested here
-			</section>
-
-			<section>
 				<section>
-					<h1>The importance of writing small functions</h1>
+          <p>router.navigate()</p>
+
+          <div class="fragment">
+          <p>Function:</p>
+
+          <pre style="width: 700px"><code class="javascript" data-trim style="font-size: 18px;">
+gotoDetail(character: Character): void {
+  const link = ['/detail', character.id];
+  this.router.navigate(link);
+}            
+          </code></pre>
+          </div>
+
+          <div class="fragment">
+          <p>Test:</p>
+
+          <pre style="width: 900px"><code class="javascript" data-trim style="font-size: 18px;">
+it('should navigate to the details page for the given character', () => {
+  const spy = spyOn(router, 'navigate');
+  const character = new Character();
+  character.id = 1;
+  
+  component.gotoDetail(character);
+  expect(router.navigate).toHaveBeenCalledWith(['/detail', character.id]);
+});
+          </code></pre>
+          </div>
+        </section>
+        
+				<section>
+          <p>fakeAsync() and tick()</p>
+
+          <div class="fragment">
+          <p>Function:</p>
+
+          <pre style="width: 700px"><code class="javascript" data-trim style="font-size: 18px;">
+save(): void {
+  this.characterService
+    .save(this.character)
+    .then(character => {
+      this.character = character;
+      this.goBack(character);
+    })
+    .catch(error => this.error = error);
+}    
+          </code></pre>
+          </div>
+
+          <div class="fragment">
+          <p>Test:</p>
+
+          <pre style="width: 900px"><code class="javascript" data-trim style="font-size: 18px;">
+it('should display an error if save fails', fakeAsync(() => {
+  spyOn(characterService, 'save')
+    .and.returnValue(new Promise((resolve, reject) => reject('Error!')));
+  
+  component.save();
+  tick();
+  expect(component.error).toEqual('Error!');
+}));
+          </code></pre>
+          </div>
+				</section>
+        
+				<section>
+          <p>Event Emitting</p>
+
+          <div class="fragment">
+          <p>Function:</p>
+
+          <pre style="width: 700px"><code class="javascript" data-trim style="font-size: 18px;">
+goBack(savedCharacter: Character = null): void {
+  this.close.emit(savedCharacter);
+  /* ... */
+}
+          </code></pre>
+          </div>
+
+          <div class="fragment">
+          <p>Test:</p>
+
+          <pre style="width: 900px"><code class="javascript" data-trim style="font-size: 18px;">
+it('should emit the saved character', () => {
+  const expected = new Character();
+  component.close
+    .subscribe(result => expect(result).toBe(expected));
+  
+  component.goBack(expected);
+});
+          </code></pre>
+          </div>
+				</section>
+        
+				<section>
+          <p>Global objects like window and localStorage</p>
+
+          <div class="fragment">
+          <p>Function:</p>
+
+          <pre style="width: 700px"><code class="javascript" data-trim style="font-size: 18px;">
+goBack(savedCharacter: Character = null): void {
+  /* ... */
+  if (this.navigated) { window.history.back(); }
+}
+          </code></pre>
+          </div>
+
+          <div class="fragment">
+          <p>Test:</p>
+
+          <pre style="width: 900px"><code class="javascript" data-trim style="font-size: 18px;">
+it('should go back if navigated is true', () => {
+  const spy = spyOn(window.history, 'back');
+  component.navigated = true;
+  
+  component.goBack();
+  expect(spy).toHaveBeenCalled();
+});
+          </code></pre>
+          </div>
+				</section>
+        
+				<section>
+          <p>Http</p>
+
+          <section>
+          <p>Function:</p>
+
+          <pre style="width: 700px"><code class="javascript" data-trim style="font-size: 18px;">
+getCharacters() {
+  return this.http
+    .get(this.charactersUrl)
+    .toPromise()
+    .then((response) => {
+      return response.json().data as Character[];
+    })
+    .catch(this._handleError);
+}
+          </code></pre>
+          </section>
+
+          <section>
+          <p>Test:</p>
+
+          <pre style="width: 1000px"><code class="javascript" data-trim style="font-size: 18px;">
+it('should return characters', fakeAsync(() => {
+  const character1 = new Character();
+  const character2 = new Character();
+  let result: Character[];
+  
+  service.getCharacters().then(characters => result = characters);
+  lastConnection.mockRespond(new Response(new ResponseOptions({
+    body: { data: [character1, character2] }
+  })));
+  tick();
+  expect(lastConnection.request.url).toMatch(/app\/characters$/);
+  expect(result.length).toEqual(2);
+  expect(result[0]).toEqual(character1);
+  expect(result[1]).toEqual(character2);
+}));
+          </code></pre>
+          </section>
+        </section>
+        
+				<section>
+          <p>HttpClient</p>
+
+          <section>
+          <p>Test:</p>
+
+          <pre style="width: 1000px"><code class="javascript" data-trim style="font-size: 18px;">
+it('should return characters', () => {
+  const character1 = new Character();
+  const character2 = new Character();
+  let result: Character[];
+  service.getCharacters().subscribe(characters => result = characters);
+  
+  const req = httpMock.expectOne(`app/characters`);
+  expect(req.request.method).toEqual('GET');
+  req.flush([character1, character2]);
+  expect(result.length).toEqual(2);
+  expect(result[0]).toEqual(character1);
+  expect(result[1]).toEqual(character2);
+});
+          </code></pre>
+          </section>
 				</section>
 
-				<section>Complex functions are hard to test</section>
-
-				<section>Refactor to small functions that are easier to test</section>
-			</section>
-
 			<section>
-				<h1>HTTP</h1>
+        <h2>It's TDD Time</h2>
+        
+        <p>The feature we are going to develop using TDD is:</p>
 
-				<h3>CharacterSearchService</h3>
-				<h3>Show tests for Http</h3>
-				<h3>Then show same tests if this were HttpClient</h3>
+        <div class="fragment">
+          <p>Villains attacking heroes!!!</p>
+
+          <img src="https://media.giphy.com/media/o2Lwy4g7Dzptu/giphy.gif">
+        </div>
 			</section>
+
+      <section>
+        <h2>Let's code!!!</h2>
+      </section>
 		</div>
 	</div>
 
@@ -441,6 +613,7 @@ describe('#onSelect', () => {
 			progress: true,
 			history: true,
 			transition: 'fade',
+			width: "90%",
 
 			// More info https://github.com/hakimel/reveal.js#dependencies
 			dependencies: [
